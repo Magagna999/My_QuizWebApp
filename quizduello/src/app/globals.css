@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * FONT IMPORT
+ * Outfit: titoli e heading (geometrico, moderno)
+ * Plus Jakarta Sans: body text (leggibile, amichevole)
+ */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+
+/*
+ * STILI BASE
+ * Applicati a tutto il documento HTML
+ */
+@layer base {
+  body {
+    @apply font-body text-gray-900 bg-gray-50 antialiased;
+  }
+
+  /* Scrollbar più sottile e pulita su browser Webkit */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 3px;
+  }
+}
+
+/*
+ * COMPONENTI RIUSABILI
+ * Classi utility personalizzate usate in tutto il progetto
+ */
+@layer components {
+  /* Bottone primario (viola) */
+  .btn-primary {
+    @apply px-6 py-3 bg-brand-600 text-white font-display font-medium
+           rounded-lg transition-all duration-150 ease-out
+           hover:bg-brand-800 active:scale-[0.98]
+           focus-visible:outline-none focus-visible:ring-2
+           focus-visible:ring-brand-600 focus-visible:ring-offset-2;
+  }
+
+  /* Bottone secondario (outline viola) */
+  .btn-secondary {
+    @apply px-6 py-3 border border-brand-600 text-brand-600 font-display
+           font-medium rounded-lg transition-all duration-150 ease-out
+           hover:bg-brand-50 active:scale-[0.98]
+           focus-visible:outline-none focus-visible:ring-2
+           focus-visible:ring-brand-600 focus-visible:ring-offset-2;
+  }
+
+  /* Container con larghezza massima centrato */
+  .container-app {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/*
+ * ANIMAZIONI
+ * Classi per animare gli elementi al caricamento della pagina
+ * Ogni .delay-X ritarda l'animazione per creare un effetto "staggered"
+ */
+@layer utilities {
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+}
